@@ -6,16 +6,16 @@ using System.Threading.Tasks;
 
 namespace eticket_app.Controllers
 {
-    public class ActorsController : Controller
+    public class ProducersController : Controller
     {
         private readonly AppDbContext _context;
-        public ActorsController(AppDbContext context)
+        public ProducersController(AppDbContext context)
         {
-            _context= context;
+            _context = context;
         }
         public async Task<IActionResult> Index()
         {
-            var data = await _context.Actors.ToListAsync();
+            var data = await _context.Producers.ToListAsync();
             return View(data);
         }
     }
