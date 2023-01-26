@@ -7,7 +7,7 @@ using System.Numerics;
 using System.Reflection.Emit;
 using System.Threading.Tasks;
 
-namespace eTickets.Data
+namespace eticket_app.Data
 {
     public class AppDbContext : DbContext
     {

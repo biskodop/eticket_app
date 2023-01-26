@@ -1,4 +1,4 @@
-﻿using eTickets.Data.Base;
+﻿using eticket_app.Data.Base;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Xml.Linq;

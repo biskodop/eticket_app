@@ -1,6 +1,6 @@
 using eticket_app.Data.Services;
-using eTickets.Data;
-using eTickets.Data.Services;
+using eticket_app.Data;
+using eticket_app.Data.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;

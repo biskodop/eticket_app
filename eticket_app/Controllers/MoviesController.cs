@@ -1,8 +1,8 @@
-﻿using eTickets.Data.Services;
+﻿using eticket_app.Data.Services;
 using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
 
-namespace eTickets.Controllers
+namespace eticket_app.Controllers
 {
     public class MoviesController : Controller
     {

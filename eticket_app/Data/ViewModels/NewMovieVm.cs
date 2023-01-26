@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 using System.ComponentModel.DataAnnotations;
 using System;
 using eticket_app.Data.Enums;
-using eTickets.Data.Base;
+using eticket_app.Data.Base;
 
 namespace eticket_app.Models
 {

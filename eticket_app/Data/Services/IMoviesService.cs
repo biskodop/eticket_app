@@ -1,8 +1,8 @@
 ﻿using eticket_app.Models;
-using eTickets.Data.Base;
+using eticket_app.Data.Base;
 using System.Threading.Tasks;
 
-namespace eTickets.Data.Services
+namespace eticket_app.Data.Services
 {
     public interface IMoviesService : IEntityBaseRepository<Movie>
     {

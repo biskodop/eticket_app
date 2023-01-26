@@ -8,7 +8,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace eTickets.Data
+namespace eticket_app.Data
 {
     public class AppDbInitializer
     {

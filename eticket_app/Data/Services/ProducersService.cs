@@ -1,6 +1,6 @@
 ﻿using eticket_app.Models;
-using eTickets.Data;
-using eTickets.Data.Base;
+using eticket_app.Data;
+using eticket_app.Data.Base;
 
 namespace eticket_app.Data.Services
 {

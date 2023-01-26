@@ -1,10 +1,10 @@
 ﻿using eticket_app.Models;
-using eTickets.Data;
+using eticket_app.Data;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using System;
 using Microsoft.EntityFrameworkCore;
-using eTickets.Data.Base;
+using eticket_app.Data.Base;
 
 namespace eticket_app.Data.Services
 {

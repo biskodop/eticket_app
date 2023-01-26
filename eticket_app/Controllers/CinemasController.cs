@@ -1,6 +1,6 @@
 ﻿using eticket_app.Data.Services;
 using eticket_app.Models;
-using eTickets.Data;
+using eticket_app.Data;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System.Linq;

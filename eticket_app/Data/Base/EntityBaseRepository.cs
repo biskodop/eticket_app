@@ -6,7 +6,7 @@ using System.Linq.Expressions;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace eTickets.Data.Base
+namespace eticket_app.Data.Base
 {
     public class EntityBaseRepository<T> : IEntityBaseRepository<T> where T : class, IEntityBase, new()
     {
