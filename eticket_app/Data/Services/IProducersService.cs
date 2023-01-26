@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace eticket_app.Data.Services
 {
-    public interface IActorsService:IEntityBaseRepository<Actor>
+    public interface IProducersService : IEntityBaseRepository<Producer>
     {
 
     }

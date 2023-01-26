@@ -8,9 +8,9 @@ using eTickets.Data.Base;
 
 namespace eticket_app.Data.Services
 {
-    public class ActorsService : EntityBaseRepository<Actor>, IActorsService
+    public class CinemasService : EntityBaseRepository<Cinema>, ICinemasService
     {
         private readonly AppDbContext _context;
-        public ActorsService(AppDbContext context) : base(context) { }
+        public CinemasService(AppDbContext context) : base(context) { }
     }
 }
