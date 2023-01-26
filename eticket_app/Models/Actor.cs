@@ -16,6 +16,8 @@ namespace eticket_app.Models
         [Display(Name = "Full Name")]
         [Required(ErrorMessage = "Full Name is required")]
         [StringLength(50, MinimumLength = 3, ErrorMessage = "Full Name must be between 3 and 50 chars")]
+        [RegularExpression(@"^[A-Z][a-z]+\s[A-Z][a-z]+$",
+                            ErrorMessage = "Full name is not valid")]
         public string FullName { get; set; }
 
         [Display(Name = "Biography")]

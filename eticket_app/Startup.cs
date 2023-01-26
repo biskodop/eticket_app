@@ -1,3 +1,4 @@
+using eticket_app.Data.Services;
 using eTickets.Data;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -26,6 +27,7 @@ namespace eticket_app
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddDbContext<AppDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConntectionString")));
+            services.AddScoped<IActorsService, ActorsService>();
             services.AddControllersWithViews();
         }
 
