@@ -3,6 +3,7 @@ using eticket_app.Data.Cart;
 using Microsoft.AspNetCore.Mvc;
 using eticket_app.Data.ViewModels;
 using System.Threading.Tasks;
+using System.Security.Claims;
 
 namespace eticket_app.Controllers
 {
@@ -10,11 +11,21 @@ namespace eticket_app.Controllers
     {
         private readonly IMoviesService _moviesService;
         private readonly ShoppingCart _shoppingCart;
+        private readonly IOrdersService _ordersService;
 
-        public OrdersController(IMoviesService moviesService, ShoppingCart shoppingCart)
+        public OrdersController(IMoviesService moviesService, ShoppingCart shoppingCart, IOrdersService ordersService)
         {
             _moviesService = moviesService;
             _shoppingCart = shoppingCart;
+            _ordersService = ordersService;
+        }
+
+        public async Task<IActionResult> Index()
+        {
+            string userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+            string userRole = User.FindFirstValue(ClaimTypes.Role);
+            var orders = await _ordersService.GetOrdersByUserIdAndRoleAsync(userId, userRole);
+            return View(orders);
         }
 
         public IActionResult ShoppingCart()
@@ -30,6 +41,7 @@ namespace eticket_app.Controllers
 
             return View(response);
         }
+
         public async Task<IActionResult> AddItemToShoppingCart(int id)
         {
             var item = await _moviesService.GetMovieByIdAsync(id);
@@ -52,5 +64,16 @@ namespace eticket_app.Controllers
             return RedirectToAction(nameof(ShoppingCart));
         }
 
+        public async Task<IActionResult> CompleteOrder()
+        {
+            var items = _shoppingCart.GetShoppingCartItems();
+            string userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+            string userEmailAddress = User.FindFirstValue(ClaimTypes.Email);
+
+            await _ordersService.StoreOrderAsync(items, userId, userEmailAddress);
+            await _shoppingCart.ClearShoppingCartAsync();
+
+            return View("OrderCompleted");
+        }
     }
 }

@@ -7,7 +7,7 @@
 <div class="row text">
     <div class="col-md-8 offset-2">
         <p>
-            <h1>Add a New Actor</h1>
+            <h1>Add a New Cinema</h1>
         </p>
         <div class="row">
             <div class="col-md-8 offset-2">
@@ -47,9 +47,9 @@
     <script>
         $(document).ready(function () {
             var output = document.getElementById('ProfilePicturePreview');
-            output.src = $("#ProfilePictureURL").val();
+            output.src = $("#Logo").val();
         })
-        $("#ProfilePictureURL").on("change", function () {
+        $("#Logo").on("change", function () {
             var output = document.getElementById('ProfilePicturePreview');
             output.src = $(this).val();
         })
