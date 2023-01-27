@@ -7,6 +7,9 @@ namespace eticket_app.Data.ViewModels
     {
         [Display(Name = "Full name")]
         [Required(ErrorMessage = "Full name is required")]
+        [StringLength(50, MinimumLength = 3, ErrorMessage = "Full Name must be between 3 and 50 chars")]
+        [RegularExpression(@"^[A-Z][a-z]+\s[A-Z][a-z]+$",
+                            ErrorMessage = "Full name is not valid")]
         public string FullName { get; set; }
 
         [Display(Name = "Email address")]
@@ -15,6 +18,8 @@ namespace eticket_app.Data.ViewModels
 
         [Required]
         [DataType(DataType.Password)]
+        [RegularExpression(@"^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$",
+                            ErrorMessage = "Password is not valid(at lest...)")]
         public string Password { get; set; }
 
         [Display(Name = "Confirm password")]
