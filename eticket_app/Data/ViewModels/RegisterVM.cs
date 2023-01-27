@@ -14,6 +14,7 @@ namespace eticket_app.Data.ViewModels
 
         [Display(Name = "Email address")]
         [Required(ErrorMessage = "Email address is required")]
+        [EmailAddress(ErrorMessage = "Invalid Email Address")]
         public string EmailAddress { get; set; }
 
         [Required]
