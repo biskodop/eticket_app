@@ -20,6 +20,7 @@ namespace eticket_app.Models
 
         [Display(Name = "Price in $")]
         [Required(ErrorMessage = "Price is required")]
+        [Range(1, 100), DataType(DataType.Currency, ErrorMessage = "Wrong number")]
         public double Price { get; set; }
 
         [Display(Name = "Movie poster URL")]
